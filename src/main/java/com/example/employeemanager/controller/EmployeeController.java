@@ -27,7 +27,7 @@ public record EmployeeController(EmployeeService employeeService) {
     @PostMapping("/add")
     public ResponseEntity<?> addEmployee(@RequestBody Employee employee) {
         Employee savedEmployee = employeeService.addEmployee(employee);
-        return new ResponseEntity<>(savedEmployee, HttpStatus.OK);
+        return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
